@@ -85,9 +85,11 @@ FROM sales
 WHERE 
     category = 'Clothing'
     AND 
-    TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
+    CAST(sales.sale_date AS DATE) >= DATE '2022-11-01'
     AND
-    quantity >= 4
+    CAST(sales.sale_date AS DATE) < DATE '2022-12-01'
+    AND
+    sales.quantiy >= 4
 ```
 
 3. **Write a SQL query to calculate the total sales (total_sale) for each category.**:
