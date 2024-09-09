@@ -49,21 +49,57 @@ CREATE TABLE sales
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
 ```sql
+-- count rows
 SELECT COUNT(*) FROM sales;
+
+-- count customer with out duplicate
 SELECT COUNT(DISTINCT customer_id) FROM sales;
+
+-- show category 
 SELECT DISTINCT category FROM sales;
 
+
+-- check null
 SELECT * FROM sales
 WHERE 
-    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
-    gender IS NULL OR age IS NULL OR category IS NULL OR 
-    quantiy IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+    sale_date IS NULL
+    OR
+    sale_time IS NULL
+    OR
+    customer_id IS NULL
+    OR 
+    gender IS NULL
+    OR
+    age IS NULL
+    OR
+    category IS NULL
+    OR 
+    quantiy IS NULL
+    OR
+    price_per_unit IS NULL
+    OR
+    cogs IS NULL;
 
+
+-- delete row with null value
 DELETE FROM sales
 WHERE 
-    sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
-    gender IS NULL OR age IS NULL OR category IS NULL OR 
-    quantiy IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
+    sale_date IS NULL
+    OR
+    sale_time IS NULL
+    OR
+    customer_id IS NULL
+    OR 
+    gender IS NULL
+    OR
+    age IS NULL
+    OR
+    category IS NULL
+    OR 
+    quantiy IS NULL
+    OR price_per_unit IS NULL
+    OR
+    cogs IS NULL;
 ```
 
 ### 3. Data Analysis & Findings
