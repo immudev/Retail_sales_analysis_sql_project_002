@@ -97,7 +97,8 @@ WHERE
     category IS NULL
     OR 
     quantiy IS NULL
-    OR price_per_unit IS NULL
+    OR
+    price_per_unit IS NULL
     OR
     cogs IS NULL;
 ```
